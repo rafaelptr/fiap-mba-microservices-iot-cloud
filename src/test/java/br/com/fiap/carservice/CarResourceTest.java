@@ -2,28 +2,23 @@ package br.com.fiap.carservice;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Arrays;
 import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 
-@RunWith(MockitoJUnitRunner.class)
-public class CarResourceMockTest {
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class CarResourceTest {
 
-    /**
-     *  Servico mocado de carro
-     */
-    @Mock
-    private ICarResource carResource;
+    @Autowired
+    private CarResource carResource;
 
-    /**
-     * Tests with car was found by color
-     *
-     * Testa se o servico encontra um carro pela cor
-     */
     @Test
     public void shouldFindCarByColor(){
         //Stubs - dados ficticio
@@ -33,25 +28,11 @@ public class CarResourceMockTest {
         Car car = new Car();
         car.setModel(model);
         car.setColor(color);
+        carResource.save(car);
 
-        List<Car> cars = Arrays.asList(car);
+        List<Car> cars = carResource.findCarByColor(car.getColor());
 
-        //TDD
-        //   When *
-        //   Then * mocado
-        //   Assert
-        //quando chamar o metodo findCarByColor então retorne a lista de carros
-        Mockito.when(carResource.findCarByColor(color))
-               .thenReturn(cars);
-
-        //executar
-        List<Car> carsResponse = carResource.findCarByColor(color);
-
-        //TDD
-        //   When
-        //   Then
-        //   Assert *
-        assertEquals(carsResponse.get(0).getColor(),color);
-        assertEquals(carsResponse.get(0).getModel(),model);
+        assertEquals(cars.get(0).getColor(),color);
+        assertEquals(cars.get(0).getModel(),model);
     }
  }

@@ -17,7 +17,7 @@ public class CarResourceMockTest {
      *  Servico mocado de carro
      */
     @Mock
-    private ICarResource carResource;
+    private CarResource carResource;
 
     /**
      * Tests with car was found by color
