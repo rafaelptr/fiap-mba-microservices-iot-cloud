@@ -6,6 +6,7 @@ import br.com.fiap.customer.repository.CustomerRepository;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import org.hamcrest.Matchers;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +32,8 @@ public class CustomerResourceTests {
 	private Integer port;
 
 
-
 	//Quinto - fazemos o setup de base de clientes
+	@Before
 	public void setup(){
 		stubCreateCustomer();
 
@@ -62,7 +63,7 @@ public class CustomerResourceTests {
 				.assertThat()
 				.statusCode(200)
 				.body("name", Matchers.is("Rafael"))
-				.body("lastname",Matchers.is("Petronilio"))
+				.body("lastName",Matchers.is("Petronilio"))
 				.body("gender",Matchers.is("male"))
 				.body("age",Matchers.is(25));
 	}
@@ -112,7 +113,7 @@ public class CustomerResourceTests {
 				.then()
 				.assertThat()
 				.statusCode(422)
-				.body("messageError", Matchers.is("Gender is Invalid"));
+				.body("messageError", Matchers.is("Gender is invalid"));
 	}
 
 	@Test
