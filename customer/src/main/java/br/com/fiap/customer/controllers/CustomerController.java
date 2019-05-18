@@ -17,12 +17,12 @@ public class CustomerController  {
     @Autowired
     private CustomerService customerService;
 
-    @GetMapping(name = "/customer/{id}")
+    @GetMapping("/customer/{id}")
     public ResponseEntity<CustomerResponse> findCustomerById(@PathVariable("id") Integer id ){
         return ResponseEntity.ok(customerService.findById(id));
     }
 
-    @PostMapping(name = "/customer")
+    @PostMapping("/customers")
     public ResponseEntity<CustomerCreateResponse> createCustomer(@RequestBody CustomerRequest customerRequest){
         return  ResponseEntity.status(HttpStatus.CREATED).body(customerService.create(customerRequest));
     }

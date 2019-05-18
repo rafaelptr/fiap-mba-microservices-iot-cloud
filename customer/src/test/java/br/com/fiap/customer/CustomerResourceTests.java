@@ -26,9 +26,10 @@ public class CustomerResourceTests {
 	//Quinto 2
 	private CustomerRepository customerRepository;
 
-	@LocalServerPort
 	//Quinto 4
+	@LocalServerPort
 	private Integer port;
+
 
 
 	//Quinto - fazemos o setup de base de clientes
@@ -39,7 +40,7 @@ public class CustomerResourceTests {
 		RestAssured.baseURI = "http://localhost";
 		RestAssured.port = this.port;
 		RestAssured.requestSpecification = new RequestSpecBuilder()
-				.addHeader("Content-Type","application/json")
+				.addHeader("Content-Type", "application/json")
 				.build();
 	}
 
