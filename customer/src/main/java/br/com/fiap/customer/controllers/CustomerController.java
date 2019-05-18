@@ -22,7 +22,7 @@ public class CustomerController  {
         return ResponseEntity.ok(customerService.findById(id));
     }
 
-    @PostMapping(name = "/customers")
+    @PostMapping(name = "/customer")
     public ResponseEntity<CustomerCreateResponse> createCustomer(@RequestBody CustomerRequest customerRequest){
         return  ResponseEntity.status(HttpStatus.CREATED).body(customerService.create(customerRequest));
     }

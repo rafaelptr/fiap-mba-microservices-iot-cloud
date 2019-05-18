@@ -7,10 +7,12 @@ import br.com.fiap.customer.json.response.CustomerResponse;
 import br.com.fiap.customer.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 
 import java.util.stream.Stream;
 
+@Service
 public class CustomerServiceImpl implements CustomerService{
     @Autowired
     private CustomerRepository customerRepository;
@@ -18,7 +20,6 @@ public class CustomerServiceImpl implements CustomerService{
     @Override
     public CustomerResponse findById(Integer id) {
 
-        CustomerResponse customerResponse = new CustomerResponse();
 
         Customer customer = customerRepository
                 .findById(id)
@@ -26,6 +27,7 @@ public class CustomerServiceImpl implements CustomerService{
                 .orElseThrow(()->
                         new HttpClientErrorException(HttpStatus.NOT_FOUND,"Customer not found"));
 
+        CustomerResponse customerResponse = new CustomerResponse();
         customerResponse.setName(customer.getName());
         customerResponse.setLastName(customer.getLastName());
         customerResponse.setGender(customer.getGender());
