@@ -4,9 +4,9 @@ https://start.spring.io/
 - carservice
 - customer
   
-@danvitoriano
-https://github.com/danvitoriano/
-https://github.com/danvitoriano/personApi
+    > @danvitoriano  
+https://github.com/danvitoriano  
+https://github.com/danvitoriano/personApi  
 
 
 
@@ -14,8 +14,8 @@ https://github.com/danvitoriano/personApi
 - jpa-persistence-composta
 - jpa-persistence-many-to-many
   
-@rafaelmatsuyama
-https://github.com/rafaelmatsuyama
+  > @rafaelmatsuyama  
+https://github.com/rafaelmatsuyama  
 
 
 
