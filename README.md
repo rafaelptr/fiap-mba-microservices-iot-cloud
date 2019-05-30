@@ -13,6 +13,7 @@ https://github.com/danvitoriano/personApi
 - jpa-persistence
 - jpa-persistence-composta
 - jpa-persistence-many-to-many
+- jpa-spring-data
   
   > @rafaelmatsuyama  
 https://github.com/rafaelmatsuyama  
