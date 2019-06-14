@@ -15,6 +15,7 @@ https://github.com/danvitoriano/personApi
 - jpa-persistence-many-to-many
 - jpa-spring-data
 - jpa-redis
+- jpa-persistence-mongodb
   
   > @rafaelmatsuyama  
 https://github.com/rafaelmatsuyama  
