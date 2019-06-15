@@ -16,6 +16,7 @@ https://github.com/danvitoriano/personApi
 - jpa-spring-data
 - jpa-redis
 - jpa-persistence-mongodb
+- jpa-neo4j
   
   > @rafaelmatsuyama  
 https://github.com/rafaelmatsuyama  
