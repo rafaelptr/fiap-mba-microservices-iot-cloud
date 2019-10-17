@@ -1,0 +1,9 @@
+padroesgof\pagamento\PagamentoComDinheiro.class
+padroesgof\pagamento\Pagamento.class
+padroesgof\pagamento\PagamentoAPI$TipoPagamento.class
+padroesgof\pagamento\Controller.class
+padroesgof\pagamento\PagamentoAPI.class
+padroesgof\pagamento\PagamentoComCheque.class
+padroesgof\pagamento\PagamentoComCartao.class
+padroesgof\DemoPagamento.class
+padroesgof\pagamento\Pagamento$1.class
